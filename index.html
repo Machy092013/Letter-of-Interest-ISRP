@@ -30,46 +30,36 @@
     .header {
         position: relative;
         width: 100%;
-        padding: 3.5rem 1.5rem 2rem;
-        overflow: hidden;
-        color: var(--white);
-    }
-
-    /* MAIN RED WAVE (horizontal, thick left → thin right) */
-    .wave-red {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 140%;
-        height: 260px;
         background: var(--red);
-        z-index: -2;
-        clip-path: path("M0,0 C0,180 350,260 900,120 L900,0 Z");
+        color: var(--white);
+        padding: 2rem 1rem 0;
+        overflow: hidden;
     }
 
-    /* BLACK SHADOW WAVE */
-    .wave-black {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 140%;
-        height: 240px;
-        background: var(--black);
-        opacity: 0.45;
-        z-index: -3;
-        clip-path: path("M0,0 C0,150 330,230 900,100 L900,0 Z");
+    /* REAL SVG WAVE */
+    .wave-container {
+        width: 100%;
+        overflow: hidden;
+        line-height: 0;
     }
 
-    .header-content {
+    .wave-container svg {
+        display: block;
+        width: 100%;
+        height: 120px;
+    }
+
+    .header-inner {
         max-width: 1100px;
-        margin: auto;
+        margin: 0 auto;
         display: flex;
         align-items: center;
         gap: 1.5rem;
+        padding-bottom: 1rem;
     }
 
-    .header-content img {
-        width: 120px;
+    .header-inner img {
+        width: 110px;
         height: auto;
         flex-shrink: 0;
     }
@@ -81,12 +71,12 @@
     }
 
     .header-text h1 {
-        font-size: 2.4rem;
+        font-size: 2.2rem;
         font-weight: 700;
     }
 
     .header-text h2 {
-        font-size: 1.25rem;
+        font-size: 1.2rem;
         font-weight: 500;
         opacity: 0.9;
         margin-top: .3rem;
@@ -106,22 +96,28 @@
         transition: opacity .7s ease, transform .7s ease;
     }
 
-    /* SCROLL REVEAL */
     .reveal {
         opacity: 1 !important;
         transform: translateY(0) !important;
     }
 
     @media (max-width: 700px) {
-        .header-content {
-            flex-direction: column;
-            text-align: center;
+        .header-inner {
+            flex-direction: row;
+            align-items: center;
+            gap: 1rem;
         }
-        .header-content img {
-            width: 95px;
+
+        .header-inner img {
+            width: 80px;
         }
+
         .header-text h1 {
-            font-size: 2rem;
+            font-size: 1.7rem;
+        }
+
+        .header-text h2 {
+            font-size: 1rem;
         }
     }
 </style>
@@ -130,16 +126,30 @@
 <body>
 
 <div class="header">
-    <div class="wave-red"></div>
-    <div class="wave-black"></div>
 
-    <div class="header-content">
+    <div class="header-inner">
         <img src="IMG_4784.png" alt="Illinois State Roleplay Logo">
         <div class="header-text">
             <h1>Letter of Interest</h1>
             <h2>SHR Position at ISRP</h2>
         </div>
     </div>
+
+    <!-- REAL LEFT→RIGHT WAVE WITH SHADOW -->
+    <div class="wave-container">
+        <svg viewBox="0 0 1440 320">
+            <!-- BLACK SHADOW -->
+            <path fill="#111" fill-opacity="0.45"
+                d="M0,64L80,80C160,96,320,128,480,144C640,160,800,160,960,144C1120,128,1280,96,1360,80L1440,64L1440,0L1360,0C1280,0,1120,0,960,0C800,0,640,0,480,0C320,0,160,0,80,0L0,0Z">
+            </path>
+
+            <!-- RED MAIN WAVE -->
+            <path fill="#c62828"
+                d="M0,96L80,112C160,128,320,160,480,176C640,192,800,192,960,176C1120,160,1280,128,1360,112L1440,96L1440,0L1360,0C1280,0,1120,0,960,0C800,0,640,0,480,0C320,0,160,0,80,0L0,0Z">
+            </path>
+        </svg>
+    </div>
+
 </div>
 
 <div class="content">
@@ -177,7 +187,6 @@
 </div>
 
 <script>
-    /* SCROLL REVEAL */
     const paragraphs = document.querySelectorAll('.content p');
 
     const revealOnScroll = () => {
