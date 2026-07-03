@@ -26,25 +26,25 @@
         line-height: 1.6;
     }
 
-    /* HEADER WITH REAL CURVED WAVES */
+    /* HEADER */
     .header {
         position: relative;
         width: 100%;
-        padding: 4rem 1.5rem 2rem;
+        padding: 3.5rem 1.5rem 2rem;
         overflow: hidden;
         color: var(--white);
     }
 
-    /* RED MAIN WAVE (STYLE #1) */
+    /* MAIN RED WAVE (horizontal, thick left → thin right) */
     .wave-red {
         position: absolute;
         top: 0;
         left: 0;
-        width: 100%;
-        height: 360px;
+        width: 140%;
+        height: 260px;
         background: var(--red);
         z-index: -2;
-        clip-path: path("M0,0 C0,200 350,360 900,180 L900,0 Z");
+        clip-path: path("M0,0 C0,180 350,260 900,120 L900,0 Z");
     }
 
     /* BLACK SHADOW WAVE */
@@ -52,12 +52,12 @@
         position: absolute;
         top: 0;
         left: 0;
-        width: 100%;
-        height: 330px;
+        width: 140%;
+        height: 240px;
         background: var(--black);
         opacity: 0.45;
         z-index: -3;
-        clip-path: path("M0,0 C0,170 330,330 900,160 L900,0 Z");
+        clip-path: path("M0,0 C0,150 330,230 900,100 L900,0 Z");
     }
 
     .header-content {
@@ -71,21 +71,28 @@
     .header-content img {
         width: 120px;
         height: auto;
+        flex-shrink: 0;
+    }
+
+    .header-text {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
     }
 
     .header-text h1 {
-        font-size: 2.6rem;
+        font-size: 2.4rem;
         font-weight: 700;
     }
 
     .header-text h2 {
-        font-size: 1.35rem;
+        font-size: 1.25rem;
         font-weight: 500;
         opacity: 0.9;
         margin-top: .3rem;
     }
 
-    /* BODY CONTENT */
+    /* BODY */
     .content {
         max-width: 900px;
         margin: 2rem auto;
@@ -114,7 +121,7 @@
             width: 95px;
         }
         .header-text h1 {
-            font-size: 2.1rem;
+            font-size: 2rem;
         }
     }
 </style>
@@ -130,7 +137,7 @@
         <img src="IMG_4784.png" alt="Illinois State Roleplay Logo">
         <div class="header-text">
             <h1>Letter of Interest</h1>
-            <h2>SHR Position</h2>
+            <h2>SHR Position at ISRP</h2>
         </div>
     </div>
 </div>
