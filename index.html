@@ -10,7 +10,8 @@
         --red: #c62828;
         --black: #111;
         --white: #fff;
-        --gray: #f5f5f5;
+        --gray: #d3d3d3; /* GREY BAR COLOR */
+        --bg: #f5f5f5;
     }
 
     * {
@@ -21,12 +22,12 @@
 
     body {
         font-family: system-ui, sans-serif;
-        background: var(--gray);
+        background: var(--bg);
         color: var(--black);
         line-height: 1.6;
     }
 
-    /* SMALL HEADER — EXACT HEIGHT OF CONTENT */
+    /* TOP HEADER */
     .header {
         width: 100%;
         background: var(--red);
@@ -36,15 +37,11 @@
         overflow: hidden;
     }
 
-    /* BLACK SHADOW BAR */
-    .shadow-bar {
-        position: absolute;
-        bottom: -12px;
-        left: 0;
+    /* GREY BAR UNDER TOP RED BANNER */
+    .grey-bar {
         width: 100%;
-        height: 12px;
-        background: var(--black);
-        opacity: 0.45;
+        height: 14px;
+        background: var(--gray);
     }
 
     .header-inner {
@@ -83,34 +80,27 @@
 
     .content p {
         margin-bottom: 1.2rem;
-        opacity: 0;
-        transform: translateY(20px);
-        transition: opacity .7s ease, transform .7s ease;
-    }
-
-    .reveal {
-        opacity: 1 !important;
-        transform: translateY(0) !important;
     }
 
     /* EXPERIENCE LIST FIX */
     .exp-item {
         white-space: nowrap;
-        font-size: 0.95rem;
+        font-size: 0.9rem;
         margin-bottom: 0.6rem;
         overflow-x: auto;
+        display: block;
     }
 
-    /* BOTTOM RED SEPARATOR */
-    .bottom-separator {
+    /* RED SEPARATOR BAR */
+    .separator {
         width: 100%;
         height: 18px;
         background: var(--red);
-        margin-top: 2rem;
+        margin: 2rem 0;
         position: relative;
     }
 
-    .bottom-separator::after {
+    .separator::after {
         content: "";
         position: absolute;
         bottom: -10px;
@@ -131,9 +121,8 @@
         .header-text h2 {
             font-size: .9rem;
         }
-
         .exp-item {
-            font-size: 0.85rem;
+            font-size: 0.8rem;
         }
     }
 </style>
@@ -150,8 +139,10 @@
             <h2>Senior High Rank Position</h2>
         </div>
     </div>
-    <div class="shadow-bar"></div>
 </div>
+
+<!-- GREY BAR UNDER TOP BANNER -->
+<div class="grey-bar"></div>
 
 <!-- MAIN CONTENT -->
 <div class="content">
@@ -175,8 +166,10 @@
             <h1>Experience</h1>
         </div>
     </div>
-    <div class="shadow-bar"></div>
 </div>
+
+<!-- GREY BAR UNDER EXPERIENCE BANNER -->
+<div class="grey-bar"></div>
 
 <!-- EXPERIENCE CONTENT -->
 <div class="content">
@@ -190,6 +183,9 @@
     <p class="exp-item"><strong>Management</strong> — Georgia State Roleplay — 6k+ Members</p>
     <p class="exp-item"><strong>Aquarium Supervisor</strong> — FishBlox — 30k+ Members</p>
 
+    <!-- RED BAR AFTER EXPERIENCE LIST -->
+    <div class="separator"></div>
+
     <p>I recognize that this position carries significant responsibility. Senior High Ranking members are expected to lead by example, teach and discipline others, and make decisions that benefit the community as a whole. I am fully prepared to accept those responsibilities and improve and assist the community.</p>
 
     <p>Thank you for taking the time to review my Letter of Interest. Regardless of the outcome, I appreciate the opportunity to apply and remain committed to supporting Illinois State Roleplay. It would be an honor to serve the community as a Senior High Ranking member, and I look forward to the possibility of contributing to the community!</p>
@@ -197,23 +193,8 @@
     <p>Respectfully,<br><strong>Machy092013</strong></p>
 </div>
 
-<!-- BOTTOM RED SEPARATOR BAR -->
-<div class="bottom-separator"></div>
-
-<script>
-    const paragraphs = document.querySelectorAll('.content p');
-
-    const revealOnScroll = () => {
-        const trigger = window.innerHeight * 0.85;
-        paragraphs.forEach(p => {
-            const top = p.getBoundingClientRect().top;
-            if (top < trigger) p.classList.add('reveal');
-        });
-    };
-
-    window.addEventListener('scroll', revealOnScroll);
-    revealOnScroll();
-</script>
+<!-- FINAL BOTTOM RED BAR -->
+<div class="separator"></div>
 
 </body>
 </html>
