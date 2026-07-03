@@ -10,7 +10,7 @@
         --red: #c62828;
         --black: #111;
         --white: #fff;
-        --gray: #d3d3d3; /* GREY BAR COLOR */
+        --grey: #cfcfcf; /* ONE unified grey */
         --bg: #f5f5f5;
     }
 
@@ -34,14 +34,13 @@
         color: var(--white);
         padding: 1.2rem 1rem;
         position: relative;
-        overflow: hidden;
     }
 
-    /* GREY BAR UNDER TOP RED BANNER */
+    /* GREY BAR UNDER BANNERS */
     .grey-bar {
         width: 100%;
         height: 14px;
-        background: var(--gray);
+        background: var(--grey);
     }
 
     .header-inner {
@@ -82,12 +81,12 @@
         margin-bottom: 1.2rem;
     }
 
-    /* EXPERIENCE LIST FIX */
+    /* EXPERIENCE LIST — SHRINKED TO FIT ONE LINE */
     .exp-item {
         white-space: nowrap;
-        font-size: 0.9rem;
+        font-size: 0.78rem; /* SHRUNK to fit */
         margin-bottom: 0.6rem;
-        overflow-x: auto;
+        overflow: visible; /* prevents cutoff */
         display: block;
     }
 
@@ -122,7 +121,7 @@
             font-size: .9rem;
         }
         .exp-item {
-            font-size: 0.8rem;
+            font-size: 0.72rem; /* smaller on mobile */
         }
     }
 </style>
