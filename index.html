@@ -1,842 +1,189 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Illinois State Roleplay | Senior High Rank Letter of Interest</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- Font Awesome (icons only, no JS) -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZh1Pj3p7lT6X1Zl9I7E2zC2R7C2JkFhZPp2v5Kk5j5GqV1lZ1Q5V5Q5V5Z5V5g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<meta charset="UTF-8">
+<title>Letter of Interest – SHR Position</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <style>
-        :root {
-            --color-navy: #0b2340;
-            --color-navy-light: #12345f;
-            --color-white: #ffffff;
-            --color-gray-light: #f4f5f7;
-            --color-gray-medium: #6b7280;
-            --color-gray-dark: #111827;
-            --color-border: #d1d5db;
-            --color-accent: #1f4f8b;
-            --shadow-soft: 0 8px 18px rgba(15, 23, 42, 0.12);
-            --radius-card: 8px;
-            --radius-pill: 999px;
-        }
+<style>
+    :root {
+        --red: #c62828;
+        --black: #111;
+        --white: #fff;
+        --gray: #f5f5f5;
+    }
 
-        * {
-            box-sizing: border-box;
-        }
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
 
-        html, body {
-            margin: 0;
-            padding: 0;
-            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-            background-color: var(--color-gray-light);
-            color: var(--color-gray-dark);
-            line-height: 1.6;
-        }
+    body {
+        font-family: system-ui, sans-serif;
+        background: var(--gray);
+        color: var(--black);
+        line-height: 1.6;
+    }
 
-        body {
-            display: flex;
+    /* MAIN WAVE HEADER */
+    .header {
+        position: relative;
+        width: 100%;
+        overflow: hidden;
+        padding: 4rem 1.5rem 2rem;
+        color: var(--white);
+    }
+
+    /* RED MAIN DRAPE */
+    .wave-red {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 140%;
+        height: 380px;
+        background: var(--red);
+        clip-path: path("M0,0 L0,300 Q300,380 900,200 L900,0 Z");
+        z-index: -2;
+    }
+
+    /* BLACK SHADOW DRAPE */
+    .wave-black {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 140%;
+        height: 350px;
+        background: var(--black);
+        opacity: 0.45;
+        clip-path: path("M0,0 L0,260 Q280,330 900,180 L900,0 Z");
+        z-index: -3;
+    }
+
+    .header-content {
+        max-width: 1100px;
+        margin: auto;
+        display: flex;
+        align-items: center;
+        gap: 1.5rem;
+    }
+
+    .header-content img {
+        width: 110px;
+        height: auto;
+    }
+
+    .header-text h1 {
+        font-size: 2.4rem;
+        font-weight: 700;
+    }
+
+    .header-text h2 {
+        font-size: 1.3rem;
+        font-weight: 500;
+        opacity: 0.9;
+        margin-top: .3rem;
+    }
+
+    /* BODY CONTENT */
+    .content {
+        max-width: 900px;
+        margin: 2rem auto;
+        padding: 0 1.5rem;
+    }
+
+    .content p {
+        margin-bottom: 1.2rem;
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity .7s ease, transform .7s ease;
+    }
+
+    /* SCROLL REVEAL */
+    .reveal {
+        opacity: 1 !important;
+        transform: translateY(0) !important;
+    }
+
+    @media (max-width: 700px) {
+        .header-content {
             flex-direction: column;
-            min-height: 100vh;
+            text-align: center;
         }
-
-        /* Layout */
-        .page-wrapper {
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
+        .header-content img {
+            width: 90px;
         }
-
-        header {
-            background: linear-gradient(135deg, var(--color-navy), var(--color-accent));
-            color: var(--color-white);
-            padding: 1.75rem 1.5rem 1.5rem;
-            box-shadow: 0 4px 12px rgba(15, 23, 42, 0.35);
+        .header-text h1 {
+            font-size: 2rem;
         }
-
-        .header-inner {
-            max-width: 1080px;
-            margin: 0 auto;
-        }
-
-        .header-topline {
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            justify-content: space-between;
-            gap: 0.75rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .site-identity {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-        }
-
-        .site-badge {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 44px;
-            height: 44px;
-            border-radius: 50%;
-            border: 2px solid rgba(255, 255, 255, 0.35);
-            background-color: rgba(15, 23, 42, 0.35);
-        }
-
-        .site-badge i {
-            font-size: 1.4rem;
-        }
-
-        .site-title-group {
-            display: flex;
-            flex-direction: column;
-            gap: 0.15rem;
-        }
-
-        .site-title {
-            font-size: 1.1rem;
-            letter-spacing: 0.06em;
-            text-transform: uppercase;
-            font-weight: 600;
-        }
-
-        .site-subtitle {
-            font-size: 0.85rem;
-            opacity: 0.85;
-        }
-
-        .application-meta {
-            text-align: right;
-            font-size: 0.85rem;
-        }
-
-        .meta-label {
-            text-transform: uppercase;
-            letter-spacing: 0.08em;
-            font-weight: 600;
-            opacity: 0.85;
-        }
-
-        .meta-value {
-            margin-top: 0.25rem;
-            font-weight: 500;
-        }
-
-        .header-main {
-            display: flex;
-            flex-direction: column;
-            gap: 0.75rem;
-        }
-
-        .header-main-title {
-            font-size: 1.9rem;
-            font-weight: 600;
-            letter-spacing: 0.03em;
-        }
-
-        .header-main-subtitle {
-            font-size: 1rem;
-            opacity: 0.9;
-        }
-
-        .header-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-            margin-top: 0.5rem;
-        }
-
-        .tag-pill {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.4rem;
-            padding: 0.25rem 0.75rem;
-            border-radius: var(--radius-pill);
-            border: 1px solid rgba(255, 255, 255, 0.35);
-            font-size: 0.8rem;
-            opacity: 0.95;
-        }
-
-        .tag-pill i {
-            font-size: 0.85rem;
-        }
-
-        /* Navigation */
-        nav {
-            background-color: var(--color-navy-light);
-            border-top: 1px solid rgba(255, 255, 255, 0.12);
-            border-bottom: 1px solid rgba(15, 23, 42, 0.65);
-        }
-
-        .nav-inner {
-            max-width: 1080px;
-            margin: 0 auto;
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.35rem 1.5rem;
-        }
-
-        .nav-label {
-            font-size: 0.8rem;
-            text-transform: uppercase;
-            letter-spacing: 0.12em;
-            opacity: 0.8;
-            color: var(--color-gray-light);
-            margin-right: 0.75rem;
-            white-space: nowrap;
-        }
-
-        .nav-links {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.25rem;
-        }
-
-        .nav-links a {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.35rem;
-            padding: 0.4rem 0.75rem;
-            border-radius: var(--radius-pill);
-            font-size: 0.82rem;
-            color: var(--color-white);
-            text-decoration: none;
-            border: 1px solid rgba(255, 255, 255, 0.18);
-            background-color: rgba(15, 23, 42, 0.35);
-        }
-
-        .nav-links a i {
-            font-size: 0.8rem;
-            opacity: 0.9;
-        }
-
-        .nav-links a:hover,
-        .nav-links a:focus {
-            outline: none;
-            border-color: rgba(255, 255, 255, 0.6);
-            background-color: rgba(15, 23, 42, 0.55);
-        }
-
-        main {
-            flex: 1;
-        }
-
-        .content-wrapper {
-            max-width: 1080px;
-            margin: 0 auto;
-            padding: 1.75rem 1.5rem 2.25rem;
-        }
-
-        /* Cards / Panels */
-        .section-group {
-            display: flex;
-            flex-direction: column;
-            gap: 1.5rem;
-        }
-
-        section {
-            background-color: var(--color-white);
-            border-radius: var(--radius-card);
-            box-shadow: var(--shadow-soft);
-            border: 1px solid var(--color-border);
-            padding: 1.5rem 1.5rem 1.4rem;
-        }
-
-        section + section {
-            margin-top: 0.25rem;
-        }
-
-        .section-header {
-            display: flex;
-            align-items: baseline;
-            justify-content: space-between;
-            gap: 0.75rem;
-            margin-bottom: 0.9rem;
-            padding-bottom: 0.75rem;
-            border-bottom: 1px solid #e5e7eb;
-        }
-
-        .section-title-group {
-            display: flex;
-            align-items: center;
-            gap: 0.6rem;
-        }
-
-        .section-icon {
-            width: 32px;
-            height: 32px;
-            border-radius: 50%;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            background-color: #e5edf7;
-            color: var(--color-accent);
-        }
-
-        .section-icon i {
-            font-size: 0.95rem;
-        }
-
-        .section-title {
-            font-size: 1.05rem;
-            font-weight: 600;
-            letter-spacing: 0.03em;
-            text-transform: uppercase;
-            color: var(--color-navy);
-        }
-
-        .section-meta {
-            font-size: 0.8rem;
-            color: var(--color-gray-medium);
-            text-transform: uppercase;
-            letter-spacing: 0.12em;
-            white-space: nowrap;
-        }
-
-        .section-body {
-            font-size: 0.95rem;
-            color: var(--color-gray-dark);
-        }
-
-        .section-body p {
-            margin: 0 0 0.85rem;
-        }
-
-        .section-body p:last-child {
-            margin-bottom: 0;
-        }
-
-        .section-divider {
-            margin: 1.1rem 0 0.9rem;
-            border-top: 1px solid #e5e7eb;
-        }
-
-        /* Checklist */
-        .checklist {
-            list-style: none;
-            padding: 0;
-            margin: 0.4rem 0 0;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-            gap: 0.4rem 1rem;
-        }
-
-        .checklist li {
-            display: flex;
-            align-items: center;
-            gap: 0.45rem;
-            font-size: 0.95rem;
-            color: var(--color-gray-dark);
-        }
-
-        .check-icon {
-            width: 20px;
-            height: 20px;
-            border-radius: 50%;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            background-color: #e5f4e8;
-            color: #166534;
-            border: 1px solid #bbf7d0;
-            flex-shrink: 0;
-        }
-
-        .check-icon i {
-            font-size: 0.8rem;
-        }
-
-        /* Footer */
-        footer {
-            border-top: 1px solid #d1d5db;
-            background-color: #e5e7eb;
-            padding: 1.25rem 1.5rem 1.5rem;
-        }
-
-        .footer-inner {
-            max-width: 1080px;
-            margin: 0 auto;
-            font-size: 0.9rem;
-            color: var(--color-gray-dark);
-            display: flex;
-            flex-direction: column;
-            gap: 0.75rem;
-        }
-
-        .footer-signoff {
-            font-weight: 500;
-        }
-
-        .footer-name {
-            font-weight: 600;
-            letter-spacing: 0.06em;
-        }
-
-        .footer-meta {
-            font-size: 0.8rem;
-            color: var(--color-gray-medium);
-        }
-
-        .footer-meta span {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.35rem;
-            margin-right: 0.75rem;
-        }
-
-        .footer-meta i {
-            font-size: 0.85rem;
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            header {
-                padding: 1.4rem 1.1rem 1.25rem;
-            }
-
-            .nav-inner {
-                padding: 0.4rem 1.1rem 0.55rem;
-            }
-
-            .content-wrapper {
-                padding: 1.4rem 1.1rem 2rem;
-            }
-
-            .header-topline {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-
-            .application-meta {
-                text-align: left;
-            }
-
-            .header-main-title {
-                font-size: 1.6rem;
-            }
-
-            section {
-                padding: 1.25rem 1.1rem 1.2rem;
-            }
-
-            .section-header {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-
-            .section-meta {
-                margin-top: 0.15rem;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .nav-label {
-                display: none;
-            }
-
-            .nav-inner {
-                justify-content: center;
-            }
-
-            .nav-links {
-                justify-content: center;
-            }
-
-            .header-main-title {
-                font-size: 1.45rem;
-            }
-        }
-    </style>
+    }
+</style>
 </head>
+
 <body>
-<div class="page-wrapper">
-    <header>
-        <div class="header-inner">
-            <div class="header-topline">
-                <div class="site-identity">
-                    <div class="site-badge" aria-hidden="true">
-                        <i class="fas fa-shield-alt"></i>
-                    </div>
-                    <div class="site-title-group">
-                        <div class="site-title">Illinois State Roleplay</div>
-                        <div class="site-subtitle">Emergency Response Liberty County &mdash; Senior High Rank Application Portal</div>
-                    </div>
-                </div>
-                <div class="application-meta">
-                    <div class="meta-label">Letter of Interest</div>
-                    <div class="meta-value">Senior High Rank Consideration</div>
-                </div>
-            </div>
 
-            <div class="header-main">
-                <div class="header-main-title">Senior High Rank Letter of Interest</div>
-                <div class="header-main-subtitle">
-                    Submitted as a formal expression of interest in serving the Illinois State Roleplay community
-                    with professionalism, integrity, and leadership.
-                </div>
-                <div class="header-tags" aria-label="Application context">
-                    <span class="tag-pill">
-                        <i class="fas fa-user-tie" aria-hidden="true"></i>
-                        Senior High Rank Candidate
-                    </span>
-                    <span class="tag-pill">
-                        <i class="fas fa-building" aria-hidden="true"></i>
-                        Roleplay Administration
-                    </span>
-                    <span class="tag-pill">
-                        <i class="fas fa-file-signature" aria-hidden="true"></i>
-                        Formal Letter of Interest
-                    </span>
-                </div>
-            </div>
+<div class="header">
+    <div class="wave-red"></div>
+    <div class="wave-black"></div>
+
+    <div class="header-content">
+        <img src="IMG_4784.png" alt="Illinois State Roleplay Logo">
+        <div class="header-text">
+            <h1>Letter of Interest</h1>
+            <h2>SHR Position</h2>
         </div>
-    </header>
-
-    <nav aria-label="Primary">
-        <div class="nav-inner">
-            <div class="nav-label">Application Sections</div>
-            <div class="nav-links">
-                <a href="#introduction"><i class="fas fa-handshake" aria-hidden="true"></i><span>Introduction</span></a>
-                <a href="#why-applying"><i class="fas fa-bullseye" aria-hidden="true"></i><span>Why I Am Applying</span></a>
-                <a href="#leadership-philosophy"><i class="fas fa-compass" aria-hidden="true"></i><span>Leadership Philosophy</span></a>
-                <a href="#experience"><i class="fas fa-briefcase" aria-hidden="true"></i><span>Experience</span></a>
-                <a href="#qualifications"><i class="fas fa-list-check" aria-hidden="true"></i><span>Qualifications</span></a>
-                <a href="#what-i-will-bring"><i class="fas fa-people-group" aria-hidden="true"></i><span>What I Will Bring</span></a>
-                <a href="#closing-statement"><i class="fas fa-envelope-open-text" aria-hidden="true"></i><span>Closing Statement</span></a>
-            </div>
-        </div>
-    </nav>
-
-    <main>
-        <div class="content-wrapper">
-            <div class="section-group">
-
-                <!-- Introduction -->
-                <section id="introduction" aria-labelledby="introduction-title">
-                    <header class="section-header">
-                        <div class="section-title-group">
-                            <div class="section-icon" aria-hidden="true">
-                                <i class="fas fa-handshake"></i>
-                            </div>
-                            <h2 class="section-title" id="introduction-title">Introduction</h2>
-                        </div>
-                        <div class="section-meta">Formal Letter of Interest</div>
-                    </header>
-                    <div class="section-body">
-                        <p>
-                            I would like to respectfully submit this Letter of Interest to the Illinois State Roleplay
-                            leadership team and express my sincere appreciation for the time and attention devoted to
-                            reviewing my application. I recognize that Senior High Rank positions carry significant
-                            responsibility, and I am grateful for the opportunity to be considered for such a role.
-                        </p>
-                        <p>
-                            Illinois State Roleplay has established a strong standard of professionalism and structure
-                            within Emergency Response Liberty County, and I value the effort that leadership invests
-                            into maintaining a safe, organized, and engaging environment for all members. It is with
-                            that respect in mind that I present this letter, outlining my philosophy, experience, and
-                            commitment to serving the community in a mature and dependable manner.
-                        </p>
-                    </div>
-                </section>
-
-                <!-- Why I Am Applying -->
-                <section id="why-applying" aria-labelledby="why-applying-title">
-                    <header class="section-header">
-                        <div class="section-title-group">
-                            <div class="section-icon" aria-hidden="true">
-                                <i class="fas fa-bullseye"></i>
-                            </div>
-                            <h2 class="section-title" id="why-applying-title">Why I Am Applying</h2>
-                        </div>
-                        <div class="section-meta">Motivation &amp; Commitment</div>
-                    </header>
-                    <div class="section-body">
-                        <p>
-                            I am applying for a Senior High Rank position because I am committed to upholding a high
-                            standard of professionalism and consistency within Illinois State Roleplay. I believe that
-                            leadership in an ERLC environment requires a steady presence, clear expectations, and a
-                            reliable approach to both routine operations and unexpected situations. My goal is to
-                            contribute to a culture where members know they can rely on staff to be fair, organized,
-                            and responsive.
-                        </p>
-                        <p>
-                            Accountability and maturity are central to how I conduct myself in any role. I understand
-                            that decisions made by Senior High Rank staff can significantly impact the experience of
-                            the entire community, and I take that responsibility seriously. I strive to communicate
-                            clearly, listen carefully, and ensure that actions are aligned with established policies
-                            and the best interests of the server.
-                        </p>
-                        <p>
-                            Above all, I am motivated by a desire to serve the community. I value the time and effort
-                            that members invest into Illinois State Roleplay, and I want to help provide an environment
-                            where they feel respected, heard, and supported. By applying for this position, I am
-                            expressing my willingness to be a consistent, dependable, and professional presence within
-                            the server’s leadership structure.
-                        </p>
-                    </div>
-                </section>
-
-                <!-- Leadership Philosophy -->
-                <section id="leadership-philosophy" aria-labelledby="leadership-philosophy-title">
-                    <header class="section-header">
-                        <div class="section-title-group">
-                            <div class="section-icon" aria-hidden="true">
-                                <i class="fas fa-compass"></i>
-                            </div>
-                            <h2 class="section-title" id="leadership-philosophy-title">Leadership Philosophy</h2>
-                        </div>
-                        <div class="section-meta">Guiding Principles</div>
-                    </header>
-                    <div class="section-body">
-                        <p>
-                            My philosophy of leadership is grounded in the belief that true authority is earned, not
-                            simply granted by a title. Respect is built through consistent actions, fair decision
-                            making, and a willingness to listen to others. I believe that leaders should be approachable
-                            and open to feedback, while still maintaining the structure and discipline necessary for a
-                            well-run ERLC environment.
-                        </p>
-                        <p>
-                            Fairness and integrity are non-negotiable components of effective leadership. I strive to
-                            apply rules evenly, avoid favoritism, and ensure that every member is treated with dignity
-                            and respect. When decisions must be made, I aim to base them on facts, server policies, and
-                            the long-term health of the community rather than personal preference or emotion.
-                        </p>
-                        <p>
-                            I also view leadership as a team effort. Senior High Rank staff should work together,
-                            support one another, and present a unified, professional front to the community. By setting
-                            a positive example in communication, conduct, and reliability, leaders can establish the
-                            standard for others to follow. My goal is to be part of a leadership team that members look
-                            to for guidance, stability, and fairness.
-                        </p>
-                    </div>
-                </section>
-
-                <!-- Experience -->
-                <section id="experience" aria-labelledby="experience-title">
-                    <header class="section-header">
-                        <div class="section-title-group">
-                            <div class="section-icon" aria-hidden="true">
-                                <i class="fas fa-briefcase"></i>
-                            </div>
-                            <h2 class="section-title" id="experience-title">Experience</h2>
-                        </div>
-                        <div class="section-meta">Relevant Background</div>
-                    </header>
-                    <div class="section-body">
-                        <p>
-                            I have extensive experience within Emergency Response Liberty County, and I am familiar
-                            with the expectations, mechanics, and dynamics that shape a successful roleplay server.
-                            Over time, I have developed a strong understanding of how structured roleplay, clear rules,
-                            and consistent enforcement contribute to a positive environment for all participants. This
-                            experience has helped me recognize the importance of balancing realism, enjoyment, and
-                            order in every session.
-                        </p>
-                        <p>
-                            Through my time in ERLC, I have gained a solid grasp of server administration concepts,
-                            including monitoring activity, addressing rule violations, and supporting organized
-                            operations. I understand how important it is to maintain clear communication channels,
-                            document decisions when appropriate, and ensure that actions taken by staff are aligned
-                            with established guidelines. This administrative awareness allows me to approach situations
-                            with structure and clarity rather than reacting impulsively.
-                        </p>
-                        <p>
-                            Conflict resolution is a key area where I have developed practical experience. I have
-                            encountered situations involving misunderstandings, disagreements, and heightened emotions,
-                            and I have learned to approach these moments calmly and professionally. By listening to all
-                            sides, clarifying expectations, and referring to server rules, I aim to resolve conflicts in
-                            a way that is fair, transparent, and respectful to everyone involved.
-                        </p>
-                        <p>
-                            Professional communication is central to how I operate in ERLC. Whether interacting with
-                            members, coordinating with other staff, or addressing concerns, I strive to communicate
-                            clearly, respectfully, and without unnecessary escalation. I understand the importance of
-                            maintaining a calm tone, even when situations are stressful, and I recognize that how staff
-                            communicate sets the tone for the entire community.
-                        </p>
-                        <p>
-                            Decision making is another area where I have developed experience. I recognize that staff
-                            decisions can have lasting effects, and I aim to make choices that are thoughtful, balanced,
-                            and consistent with server policy. I respect the chain of command and understand when a
-                            situation should be handled at my level and when it should be elevated to higher
-                            leadership. This respect for structure helps maintain clarity and prevents confusion among
-                            both staff and members.
-                        </p>
-                        <p>
-                            Remaining calm under pressure is essential in any leadership role, especially in a busy
-                            ERLC environment. I have learned to stay composed during high-traffic sessions, complex
-                            incidents, and moments where multiple issues arise at once. By staying focused and
-                            organized, I can prioritize tasks, address concerns efficiently, and ensure that members
-                            feel that the situation is being handled professionally.
-                        </p>
-                        <p>
-                            Finally, I value the opportunity to mentor others. When newer or less experienced members
-                            have questions about rules, roleplay standards, or server expectations, I am willing to
-                            guide them in a respectful and constructive manner. I believe that helping others grow in
-                            their understanding of the server contributes to a stronger, more cohesive community and
-                            supports the long-term success of Illinois State Roleplay.
-                        </p>
-                    </div>
-                </section>
-
-                <!-- Qualifications -->
-                <section id="qualifications" aria-labelledby="qualifications-title">
-                    <header class="section-header">
-                        <div class="section-title-group">
-                            <div class="section-icon" aria-hidden="true">
-                                <i class="fas fa-list-check"></i>
-                            </div>
-                            <h2 class="section-title" id="qualifications-title">Qualifications</h2>
-                        </div>
-                        <div class="section-meta">Core Strengths</div>
-                    </header>
-                    <div class="section-body">
-                        <p>
-                            The following qualifications represent the strengths I would bring to a Senior High Rank
-                            position within Illinois State Roleplay. Each item reflects a quality that I actively strive
-                            to demonstrate in my conduct, decision making, and interactions with the community.
-                        </p>
-
-                        <div class="section-divider" aria-hidden="true"></div>
-
-                        <ul class="checklist" aria-label="Qualifications checklist">
-                            <li>
-                                <span class="check-icon"><i class="fas fa-check"></i></span>
-                                <span>Professionalism</span>
-                            </li>
-                            <li>
-                                <span class="check-icon"><i class="fas fa-check"></i></span>
-                                <span>Activity</span>
-                            </li>
-                            <li>
-                                <span class="check-icon"><i class="fas fa-check"></i></span>
-                                <span>Integrity</span>
-                            </li>
-                            <li>
-                                <span class="check-icon"><i class="fas fa-check"></i></span>
-                                <span>Accountability</span>
-                            </li>
-                            <li>
-                                <span class="check-icon"><i class="fas fa-check"></i></span>
-                                <span>Fairness</span>
-                            </li>
-                            <li>
-                                <span class="check-icon"><i class="fas fa-check"></i></span>
-                                <span>Leadership</span>
-                            </li>
-                            <li>
-                                <span class="check-icon"><i class="fas fa-check"></i></span>
-                                <span>Communication</span>
-                            </li>
-                            <li>
-                                <span class="check-icon"><i class="fas fa-check"></i></span>
-                                <span>Teamwork</span>
-                            </li>
-                            <li>
-                                <span class="check-icon"><i class="fas fa-check"></i></span>
-                                <span>Reliability</span>
-                            </li>
-                        </ul>
-                    </div>
-                </section>
-
-                <!-- What I Will Bring -->
-                <section id="what-i-will-bring" aria-labelledby="what-i-will-bring-title">
-                    <header class="section-header">
-                        <div class="section-title-group">
-                            <div class="section-icon" aria-hidden="true">
-                                <i class="fas fa-people-group"></i>
-                            </div>
-                            <h2 class="section-title" id="what-i-will-bring-title">What I Will Bring</h2>
-                        </div>
-                        <div class="section-meta">Impact &amp; Contribution</div>
-                    </header>
-                    <div class="section-body">
-                        <p>
-                            If selected for a Senior High Rank position, I will bring a leadership style rooted in
-                            consistency, respect, and dedication. I aim to be a reliable presence that members can
-                            depend on, both during routine operations and in more complex situations. By maintaining a
-                            calm and structured approach, I will help reinforce the standards that make Illinois State
-                            Roleplay a professional and enjoyable environment.
-                        </p>
-                        <p>
-                            I will work to support and strengthen the existing leadership team by communicating clearly,
-                            respecting established procedures, and collaborating effectively with other staff. My goal
-                            is to contribute to a unified, professional front that members recognize as fair,
-                            approachable, and dependable. I understand that leadership is not about personal recognition
-                            but about serving the community and supporting the team.
-                        </p>
-                        <p>
-                            I will also bring a strong commitment to respect in every interaction. Whether addressing
-                            concerns, enforcing rules, or guiding newer members, I will strive to treat everyone with
-                            dignity and patience. This respectful approach helps build trust, reduces unnecessary
-                            conflict, and encourages members to view staff as partners in maintaining a positive
-                            environment rather than obstacles.
-                        </p>
-                        <p>
-                            Finally, I will bring dedication to the long-term success of Illinois State Roleplay. I am
-                            willing to invest the time, effort, and focus required to support the server’s operations,
-                            uphold its standards, and contribute to its continued growth. My intention is to be a
-                            consistent, professional, and constructive presence that helps the community thrive.
-                        </p>
-                    </div>
-                </section>
-
-                <!-- Closing Statement -->
-                <section id="closing-statement" aria-labelledby="closing-statement-title">
-                    <header class="section-header">
-                        <div class="section-title-group">
-                            <div class="section-icon" aria-hidden="true">
-                                <i class="fas fa-envelope-open-text"></i>
-                            </div>
-                            <h2 class="section-title" id="closing-statement-title">Closing Statement</h2>
-                        </div>
-                        <div class="section-meta">Final Remarks</div>
-                    </header>
-                    <div class="section-body">
-                        <p>
-                            In closing, I would like to again thank the Illinois State Roleplay leadership team for
-                            taking the time to review my Letter of Interest. I recognize the responsibility that comes
-                            with a Senior High Rank position, and I do not take this opportunity lightly. My intention
-                            in submitting this letter is to demonstrate my commitment to professionalism, fairness, and
-                            the long-term success of the community.
-                        </p>
-                        <p>
-                            Should I be selected for a Senior High Rank role, I will approach the position with respect
-                            for the chain of command, dedication to the server’s standards, and a genuine desire to
-                            serve the members of Illinois State Roleplay. I am prepared to contribute my experience,
-                            leadership philosophy, and consistent presence to support the community and uphold the
-                            expectations placed upon staff.
-                        </p>
-                        <p>
-                            Thank you again for your consideration and for the work you do to maintain a strong,
-                            professional ERLC environment. I remain willing and ready to serve in whatever capacity you
-                            deem appropriate and look forward to the possibility of contributing more directly to the
-                            continued success of Illinois State Roleplay.
-                        </p>
-                    </div>
-                </section>
-
-            </div>
-        </div>
-    </main>
-
-    <footer>
-        <div class="footer-inner">
-            <div class="footer-signoff">
-                Respectfully,<br>
-                <span class="footer-name">Machy092013</span>
-            </div>
-            <div class="footer-meta">
-                <span><i class="fas fa-file-alt" aria-hidden="true"></i> Senior High Rank Letter of Interest &mdash; Illinois State Roleplay</span>
-                <span><i class="fas fa-shield-alt" aria-hidden="true"></i> Emergency Response Liberty County Community</span>
-            </div>
-        </div>
-    </footer>
+    </div>
 </div>
+
+<div class="content">
+    <p>
+        I appreciate the opportunity to submit my Letter of Interest for the Senior High Rank position within Illinois State Roleplay. 
+        I’ve always valued the structure, professionalism, and standards this community maintains, and I want to contribute to that 
+        environment in a meaningful way.
+    </p>
+
+    <p>
+        My goal is simple: bring consistency, maturity, and a dependable presence to the team. I believe in handling situations calmly, 
+        communicating clearly, and supporting members in a way that reflects positively on the server. Leadership isn’t about authority — 
+        it’s about responsibility, fairness, and setting the tone for others.
+    </p>
+
+    <p>
+        I’ve spent a long time in ERLC and understand how important it is to maintain order, resolve conflicts professionally, and keep 
+        the experience enjoyable for everyone. I’m comfortable making decisions, following the chain of command, and stepping in when 
+        situations require a steady hand.
+    </p>
+
+    <p>
+        If selected, I will bring reliability, respect, and dedication to the role. I’m committed to helping Illinois State Roleplay 
+        continue growing while maintaining the standards that make it stand out.
+    </p>
+
+    <p>
+        Thank you for taking the time to review my letter. I’m ready to serve, contribute, and uphold the expectations of the SHR position.
+    </p>
+
+    <p>
+        Respectfully,<br>
+        <strong>Machy092013</strong>
+    </p>
+</div>
+
+<script>
+    /* PURE JS SCROLL REVEAL (allowed since you asked for animation) */
+    const paragraphs = document.querySelectorAll('.content p');
+
+    const revealOnScroll = () => {
+        const trigger = window.innerHeight * 0.85;
+        paragraphs.forEach(p => {
+            const top = p.getBoundingClientRect().top;
+            if (top < trigger) p.classList.add('reveal');
+        });
+    };
+
+    window.addEventListener('scroll', revealOnScroll);
+    revealOnScroll();
+</script>
+
 </body>
 </html>
