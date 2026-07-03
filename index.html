@@ -26,27 +26,25 @@
         line-height: 1.6;
     }
 
-    /* HEADER */
+    /* SMALL HEADER — EXACT HEIGHT OF CONTENT */
     .header {
-        position: relative;
         width: 100%;
         background: var(--red);
         color: var(--white);
-        padding: 2rem 1rem 0;
+        padding: 1.2rem 1rem;
+        position: relative;
         overflow: hidden;
     }
 
-    /* REAL SVG WAVE */
-    .wave-container {
+    /* BLACK SHADOW BAR */
+    .shadow-bar {
+        position: absolute;
+        bottom: -12px;
+        left: 0;
         width: 100%;
-        overflow: hidden;
-        line-height: 0;
-    }
-
-    .wave-container svg {
-        display: block;
-        width: 100%;
-        height: 120px;
+        height: 12px;
+        background: var(--black);
+        opacity: 0.45;
     }
 
     .header-inner {
@@ -54,32 +52,26 @@
         margin: 0 auto;
         display: flex;
         align-items: center;
-        gap: 1.5rem;
-        padding-bottom: 1rem;
+        gap: 1rem;
     }
 
     .header-inner img {
-        width: 110px;
+        width: 80px;
         height: auto;
         flex-shrink: 0;
     }
 
-    .header-text {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-    }
-
     .header-text h1 {
-        font-size: 2.2rem;
+        font-size: 1.8rem;
         font-weight: 700;
+        line-height: 1.2;
     }
 
     .header-text h2 {
-        font-size: 1.2rem;
+        font-size: 1rem;
         font-weight: 500;
         opacity: 0.9;
-        margin-top: .3rem;
+        margin-top: .25rem;
     }
 
     /* BODY */
@@ -102,22 +94,14 @@
     }
 
     @media (max-width: 700px) {
-        .header-inner {
-            flex-direction: row;
-            align-items: center;
-            gap: 1rem;
-        }
-
         .header-inner img {
-            width: 80px;
+            width: 65px;
         }
-
         .header-text h1 {
-            font-size: 1.7rem;
+            font-size: 1.5rem;
         }
-
         .header-text h2 {
-            font-size: 1rem;
+            font-size: .9rem;
         }
     }
 </style>
@@ -125,59 +109,72 @@
 
 <body>
 
+<!-- MAIN HEADER -->
 <div class="header">
-
     <div class="header-inner">
         <img src="IMG_4784.png" alt="Illinois State Roleplay Logo">
         <div class="header-text">
-            <h1>Letter of Interest</h1>
-            <h2>SHR Position at ISRP</h2>
+            <h1>ISRP | Letter of Interest</h1>
+            <h2>Senior High Rank Position</h2>
         </div>
     </div>
-
-    <!-- REAL LEFT→RIGHT WAVE WITH SHADOW -->
-    <div class="wave-container">
-        <svg viewBox="0 0 1440 320">
-            <!-- BLACK SHADOW -->
-            <path fill="#111" fill-opacity="0.45"
-                d="M0,64L80,80C160,96,320,128,480,144C640,160,800,160,960,144C1120,128,1280,96,1360,80L1440,64L1440,0L1360,0C1280,0,1120,0,960,0C800,0,640,0,480,0C320,0,160,0,80,0L0,0Z">
-            </path>
-
-            <!-- RED MAIN WAVE -->
-            <path fill="#c62828"
-                d="M0,96L80,112C160,128,320,160,480,176C640,192,800,192,960,176C1120,160,1280,128,1360,112L1440,96L1440,0L1360,0C1280,0,1120,0,960,0C800,0,640,0,480,0C320,0,160,0,80,0L0,0Z">
-            </path>
-        </svg>
-    </div>
-
+    <div class="shadow-bar"></div>
 </div>
 
+<!-- MAIN CONTENT -->
 <div class="content">
     <p>
-        I appreciate the opportunity to submit my Letter of Interest for the Senior High Rank position within Illinois State Roleplay.
-        This community has always stood out for its structure, professionalism, and the standards it maintains. I want to contribute
-        to that environment in a meaningful and consistent way.
+        I read your announcement regarding your need for high ranking personnel and I am submitting this Letter of Interest for a Senior High Rank position within Illinois State Roleplay. I am applying because I believe I possess the professionalism, maturity, and dedication necessary to positively influence the server’s leadership team and help maintain the high standards expected of Senior High Rank members.
     </p>
 
     <p>
-        My approach to leadership is simple: stay calm, communicate clearly, and handle situations with maturity. I believe in being
-        dependable, fair, and respectful — especially when dealing with members who rely on staff to keep the server running smoothly.
+        Throughout my time in ERLC communities, I have developed a very strong understanding of what holding a higher ranking position requires. Holding a SHR position is about earning the respect of others through continuous integrity, consistency, and accountability. Every interaction with community members is an opportunity to represent the staff team professionally, and I believe those entrusted with leadership positions should always set the example for the rest of the community and I also believe I can do so in a way that can greatly influence the staff team and the community as a whole!
     </p>
 
     <p>
-        I’ve spent a long time in ERLC and understand how important it is to maintain order, resolve conflicts professionally, and
-        keep the experience enjoyable for everyone. I’m comfortable making decisions, following the chain of command, and stepping in
-        when situations require a steady presence.
+        One of my greatest strengths is my ability to remain calm during challenging situations. Whether handling conflicts, assisting members, or making difficult decisions, I believe it is important to take on every situation fairly and without bias. I understand that every action taken by members of the staff team reflects the community as a whole. Because of this, I strive to approach every decision with professionalism, patience, and respect ensuring all do their job correctly and in a professional manner.
     </p>
 
     <p>
-        If selected, I will bring reliability, consistency, and dedication to the role. My goal is to support Illinois State Roleplay
-        as it continues to grow while maintaining the standards that make it stand out.
+        I also understand the importance of communication and teamwork. A successful leadership team depends on staff members who are willing to collaborate and support one another. If selected, I will contribute to any important discussions, assist fellow staff members whenever needed, and remain as an easily approachable person to both community members and other members of the staff team. I believe strong communication is one of the most valuable tools a person who holds a SHR rank can possess.
     </p>
 
     <p>
-        Thank you for taking the time to review my letter. I’m ready to serve, contribute, and uphold the expectations of the SHR
-        position.
+        In addition to professionalism, I value consistency. Communities thrive when rules are enforced fairly and members of the staff team remain active and dependable. If given the opportunity to hold the position as a Senior High Rank, I will be fully committed to being active, professional, and available to assist whenever needed. My goal here at ISRP would be to positively and professionally influence and support the community and ensure the staff team does their work correctly and effectively.
+    </p>
+
+    <p>
+        I’d also like to add that I am a very experienced individual within the field of moderation and internal affairs work. I’ve listed past work below, please take into consideration a lot of these groups I’ve worked in are much stricter communities that are harder to become apart of. I’ll list the position I held, server, and the amount of members that are in that community.
+    </p>
+</div>
+
+<!-- EXPERIENCE BANNER -->
+<div class="header" style="margin-top: 2rem;">
+    <div class="header-inner">
+        <div class="header-text">
+            <h1>Experience</h1>
+        </div>
+    </div>
+    <div class="shadow-bar"></div>
+</div>
+
+<!-- EXPERIENCE CONTENT -->
+<div class="content">
+    <p><strong>Internal Affairs</strong> — Orange County — 7.5k+ Members</p>
+    <p><strong>Game Moderator</strong> — Area-02 — 180k+ Members</p>
+    <p><strong>Group Manager</strong> — Beachblox — 400k+ Members</p>
+    <p><strong>Management</strong> — Rio Grande Valley — 1.6k+ Members</p>
+    <p><strong>Deputy Director</strong> — Border RolePlay Community — 4k+ Members</p>
+    <p><strong>Senior Human Resources</strong> — JAWS: The Ride — 3.1k+ Members</p>
+    <p><strong>Management</strong> — Georgia State Roleplay — 6k+ Members</p>
+    <p><strong>Aquarium Supervisor</strong> — FishBlox — 30k+ Members</p>
+
+    <p>
+        I recognize that this position carries significant responsibility. Senior High Ranking members are expected to lead by example, teach and discipline others, and make decisions that benefit the community as a whole. I am fully prepared to accept those responsibilities and improve and assist the community.
+    </p>
+
+    <p>
+        Thank you for taking the time to review my Letter of Interest. Regardless of the outcome, I appreciate the opportunity to apply and remain committed to supporting Illinois State Roleplay. It would be an honor to serve the community as a Senior High Ranking member, and I look forward to the possibility of contributing to the community!
     </p>
 
     <p>
