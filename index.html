@@ -93,6 +93,26 @@
         transform: translateY(0) !important;
     }
 
+    /* RED SEPARATOR BAR */
+    .separator {
+        width: 100%;
+        height: 18px;
+        background: var(--red);
+        margin: 2rem 0;
+        position: relative;
+    }
+
+    .separator::after {
+        content: "";
+        position: absolute;
+        bottom: -10px;
+        left: 0;
+        width: 100%;
+        height: 10px;
+        background: var(--black);
+        opacity: 0.45;
+    }
+
     @media (max-width: 700px) {
         .header-inner img {
             width: 65px;
@@ -148,8 +168,11 @@
     </p>
 </div>
 
+<!-- RED SEPARATOR BAR -->
+<div class="separator"></div>
+
 <!-- EXPERIENCE BANNER -->
-<div class="header" style="margin-top: 2rem;">
+<div class="header">
     <div class="header-inner">
         <div class="header-text">
             <h1>Experience</h1>
