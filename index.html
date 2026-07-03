@@ -10,8 +10,7 @@
         --red: #c62828;
         --black: #111;
         --white: #fff;
-        --grey: #cfcfcf; /* ONE unified grey */
-        --bg: #f5f5f5;
+        --grey: #e0e0e0; /* unified lighter grey */
     }
 
     * {
@@ -22,21 +21,30 @@
 
     body {
         font-family: system-ui, sans-serif;
-        background: var(--bg);
+        background: var(--white); /* unified background */
         color: var(--black);
         line-height: 1.6;
     }
 
-    /* TOP HEADER */
-    .header {
+    /* LARGE MAIN HEADER */
+    .header-large {
         width: 100%;
         background: var(--red);
         color: var(--white);
-        padding: 1.2rem 1rem;
+        padding: 1.8rem 1rem; /* larger */
         position: relative;
     }
 
-    /* GREY BAR UNDER BANNERS */
+    /* MEDIUM-SMALL SECONDARY HEADERS */
+    .header-small {
+        width: 100%;
+        background: var(--red);
+        color: var(--white);
+        padding: 0.9rem 1rem; /* smaller but not tiny */
+        position: relative;
+    }
+
+    /* GREY BAR UNDER ALL BANNERS */
     .grey-bar {
         width: 100%;
         height: 14px;
@@ -129,8 +137,8 @@
 
 <body>
 
-<!-- MAIN HEADER -->
-<div class="header">
+<!-- LARGE MAIN HEADER -->
+<div class="header-large">
     <div class="header-inner">
         <img src="IMG_4784.png" alt="Illinois State Roleplay Logo">
         <div class="header-text">
@@ -140,7 +148,7 @@
     </div>
 </div>
 
-<!-- GREY BAR UNDER TOP BANNER -->
+<!-- GREY BAR -->
 <div class="grey-bar"></div>
 
 <!-- MAIN CONTENT -->
@@ -158,8 +166,8 @@
     <p>I’d also like to add that I am a very experienced individual within the field of moderation and internal affairs work. I’ve listed past work below, please take into consideration a lot of these groups I’ve worked in are much stricter communities that are harder to become apart of. I’ll list the position I held, server, and the amount of members that are in that community.</p>
 </div>
 
-<!-- EXPERIENCE BANNER -->
-<div class="header">
+<!-- SMALL EXPERIENCE HEADER -->
+<div class="header-small">
     <div class="header-inner">
         <div class="header-text">
             <h1>Experience</h1>
@@ -167,7 +175,7 @@
     </div>
 </div>
 
-<!-- GREY BAR UNDER EXPERIENCE BANNER -->
+<!-- GREY BAR -->
 <div class="grey-bar"></div>
 
 <!-- EXPERIENCE CONTENT -->
