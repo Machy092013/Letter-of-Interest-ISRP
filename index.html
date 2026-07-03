@@ -21,7 +21,7 @@
 
     body {
         font-family: system-ui, sans-serif;
-        background: var(--white); /* unified background */
+        background: var(--white);
         color: var(--black);
         line-height: 1.6;
     }
@@ -31,8 +31,7 @@
         width: 100%;
         background: var(--red);
         color: var(--white);
-        padding: 1.8rem 1rem; /* larger */
-        position: relative;
+        padding: 1.8rem 1rem;
     }
 
     /* MEDIUM-SMALL SECONDARY HEADERS */
@@ -40,11 +39,10 @@
         width: 100%;
         background: var(--red);
         color: var(--white);
-        padding: 0.9rem 1rem; /* smaller but not tiny */
-        position: relative;
+        padding: 0.9rem 1rem;
     }
 
-    /* GREY BAR UNDER ALL BANNERS */
+    /* LIGHT GREY STRIPE UNDER EVERY RED BANNER */
     .grey-bar {
         width: 100%;
         height: 14px;
@@ -98,24 +96,20 @@
         display: block;
     }
 
-    /* FULL-WIDTH RED SEPARATOR BAR */
+    /* FULL-WIDTH RED SEPARATOR BAR (NO SHADOW) */
     .separator {
         width: 100%;
         height: 18px;
         background: var(--red);
-        margin: 2rem 0;
-        position: relative;
+        margin: 2rem 0 0 0;
     }
 
-    .separator::after {
-        content: "";
-        position: absolute;
-        bottom: -10px;
-        left: 0;
+    /* LIGHT GREY STRIPE UNDER RED SEPARATORS */
+    .separator-grey {
         width: 100%;
-        height: 10px;
-        background: var(--black);
-        opacity: 0.45;
+        height: 14px;
+        background: var(--grey);
+        margin-bottom: 2rem;
     }
 
     @media (max-width: 700px) {
@@ -148,22 +142,22 @@
     </div>
 </div>
 
-<!-- GREY BAR -->
+<!-- LIGHT GREY STRIPE -->
 <div class="grey-bar"></div>
 
 <!-- MAIN CONTENT -->
 <div class="content">
-    <p>I read your announcement regarding your need for high ranking personnel and I am submitting this Letter of Interest for a Senior High Rank position within Illinois State Roleplay. I am applying because I believe I possess the professionalism, maturity, and dedication necessary to positively influence the server’s leadership team and help maintain the high standards expected of Senior High Rank members.</p>
+    <p>I read your announcement regarding your need for high ranking personnel and I am submitting this Letter of Interest for a Senior High Rank position within Illinois State Roleplay...</p>
 
-    <p>Throughout my time in ERLC communities, I have developed a very strong understanding of what holding a higher ranking position requires. Holding a SHR position is about earning the respect of others through continuous integrity, consistency, and accountability. Every interaction with community members is an opportunity to represent the staff team professionally, and I believe those entrusted with leadership positions should always set the example for the rest of the community and I also believe I can do so in a way that can greatly influence the staff team and the community as a whole!</p>
+    <p>Throughout my time in ERLC communities...</p>
 
-    <p>One of my greatest strengths is my ability to remain calm during challenging situations. Whether handling conflicts, assisting members, or making difficult decisions, I believe it is important to take on every situation fairly and without bias. I understand that every action taken by members of the staff team reflects the community as a whole. Because of this, I strive to approach every decision with professionalism, patience, and respect ensuring all do their job correctly and in a professional manner.</p>
+    <p>One of my greatest strengths...</p>
 
-    <p>I also understand the importance of communication and teamwork. A successful leadership team depends on staff members who are willing to collaborate and support one another. If selected, I will contribute to any important discussions, assist fellow staff members whenever needed, and remain as an easily approachable person to both community members and other members of the staff team. I believe strong communication is one of the most valuable tools a person who holds a SHR rank can possess.</p>
+    <p>I also understand the importance...</p>
 
-    <p>In addition to professionalism, I value consistency. Communities thrive when rules are enforced fairly and members of the staff team remain active and dependable. If given the opportunity to hold the position as a Senior High Rank, I will be fully committed to being active, professional, and available to assist whenever needed. My goal here at ISRP would be to positively and professionally influence and support the community and ensure the staff team does their work correctly and effectively.</p>
+    <p>In addition to professionalism...</p>
 
-    <p>I’d also like to add that I am a very experienced individual within the field of moderation and internal affairs work. I’ve listed past work below, please take into consideration a lot of these groups I’ve worked in are much stricter communities that are harder to become apart of. I’ll list the position I held, server, and the amount of members that are in that community.</p>
+    <p>I’d also like to add that I am a very experienced individual...</p>
 </div>
 
 <!-- SMALL EXPERIENCE HEADER -->
@@ -175,7 +169,7 @@
     </div>
 </div>
 
-<!-- GREY BAR -->
+<!-- LIGHT GREY STRIPE -->
 <div class="grey-bar"></div>
 
 <!-- EXPERIENCE CONTENT -->
@@ -192,20 +186,26 @@
 
 </div>
 
-<!-- FULL-WIDTH RED BAR AFTER EXPERIENCE LIST -->
+<!-- FULL-WIDTH RED BAR -->
 <div class="separator"></div>
+
+<!-- LIGHT GREY STRIPE UNDER RED -->
+<div class="separator-grey"></div>
 
 <!-- CONTINUED CONTENT -->
 <div class="content">
-    <p>I recognize that this position carries significant responsibility. Senior High Ranking members are expected to lead by example, teach and discipline others, and make decisions that benefit the community as a whole. I am fully prepared to accept those responsibilities and improve and assist the community.</p>
+    <p>I recognize that this position carries significant responsibility...</p>
 
-    <p>Thank you for taking the time to review my Letter of Interest. Regardless of the outcome, I appreciate the opportunity to apply and remain committed to supporting Illinois State Roleplay. It would be an honor to serve the community as a Senior High Ranking member, and I look forward to the possibility of contributing to the community!</p>
+    <p>Thank you for taking the time to review my Letter of Interest...</p>
 
     <p>Respectfully,<br><strong>Machy092013</strong></p>
 </div>
 
-<!-- FINAL BOTTOM RED BAR -->
+<!-- FINAL RED BAR -->
 <div class="separator"></div>
+
+<!-- FINAL LIGHT GREY STRIPE -->
+<div class="separator-grey"></div>
 
 </body>
 </html>
